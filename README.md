@@ -8,24 +8,24 @@ benchmark.
 How to use
 ----------
 
-1. Clone:
-    
+Clone:
+
     git clone git://github.com/jgonera/socket.io-multichat.git
     cd socket.io-multichat
 
-2. Install dependencies:
-    
+Install dependencies:
+
     npm install
 
-3. Run:
-    
+Run:
+
     node app.js
 
 or to disable logging and increase performance:
 
     NODE_ENV=production node app.js
 
-The app will be available at http://localhost:3000/
+The app will be available at <http://localhost:3000/>.
 You can open a few tabs in your browser, join some channel and see how it works.
 
 
