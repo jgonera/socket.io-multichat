@@ -1,0 +1,13 @@
+{
+  "name": "socket.io-multichat",
+  "description": "A simple example of a multiroom chat with Socket.IO, benchmark included",
+  "version": "0.0.1",
+  "author": "Juliusz Gonera <jgonera@gmail.com>",
+  "dependencies": {
+    "express": ">=2.5.0",
+    "socket.io": ">=0.8.7",
+    "ejs": ">=0.4.3",
+    "socket.io-client": ">=0.8.7"
+  },
+  "engines": { "node": ">= 0.4.10" }
+}
