@@ -9,16 +9,16 @@ How to use
 ----------
 
 1. Clone:
-
+    
     git clone git://github.com/jgonera/socket.io-multichat.git
     cd socket.io-multichat
 
 2. Install dependencies:
-
+    
     npm install
 
 3. Run:
-
+    
     node app.js
 
 or to disable logging and increase performance:
