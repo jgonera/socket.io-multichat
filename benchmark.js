@@ -27,7 +27,7 @@ function sendMessage(socket) {
 function connectClient(i) {
   var channel = 'test' + Math.floor(i / CLIENTS_PER_ROOM);
   setTimeout(function() {
-    var socket = io.connect('http://localhost:7890', {'force new connection': true});
+    var socket = io.connect('http://localhost:7890', { 'force new connection': true });
     socket.emit('join', channel, function() {
       ++clients;
       socket.on('broadcast', function(msg) {

@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "author": "Juliusz Gonera <jgonera@gmail.com>",
   "dependencies": {
-    "express": ">=2.5.0",
+    "express": ">=3.0",
     "socket.io": ">=0.9.6",
     "ejs": ">=0.4.3",
     "socket.io-client": ">=0.9.6"

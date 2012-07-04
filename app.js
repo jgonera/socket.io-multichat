@@ -1,15 +1,14 @@
 var express = require('express');
 
-var app = express.createServer();
-var io = require('socket.io').listen(app);
+var app = express()
+var server = app.listen(7890);
+var io = require('socket.io').listen(server);
 
-app.set('view options', {layout: false})
+app.set('view options', { layout: false })
 
 app.get('/', function(req, res) {
   res.render('index.ejs');
 });
-
-app.listen(7890);
 
 io.configure(function() {
   io.set('transports', ['websocket']);
