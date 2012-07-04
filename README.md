@@ -25,7 +25,7 @@ or to disable logging and increase performance:
 
     NODE_ENV=production node app.js
 
-The app will be available at <http://localhost:3000/>.
+The app will be available at <http://localhost:7890/>.
 You can open a few tabs in your browser, join some channel and see how it works.
 
 
