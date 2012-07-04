@@ -9,7 +9,7 @@ app.get('/', function(req, res) {
   res.render('index.ejs');
 });
 
-app.listen(3000);
+app.listen(7890);
 
 io.configure(function() {
   io.set('transports', ['websocket']);
