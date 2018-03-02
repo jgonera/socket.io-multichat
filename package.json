@@ -9,5 +9,7 @@
     "ejs": ">=0.4.3",
     "socket.io-client": ">=0.9.6"
   },
-  "engines": { "node": ">= 0.4.10" }
+  "engines": {
+    "node": ">= 0.4.10"
+  }
 }

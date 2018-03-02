@@ -6,42 +6,30 @@ var io = require('socket.io').listen(server);
 
 app.set('view options', { layout: false })
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:7890");
   res.render('index.ejs');
 });
 
-io.configure(function() {
-  io.set('transports', ['websocket']);
-});
+io.set('transports', ['websocket']);
 
-io.configure('production', function() {
-  io.set('log level', 1);
-});
+io.sockets.on('connection', function (socket) {
 
-io.sockets.on('connection', function(socket) {
-  socket.on('join', function(channel, ack) {
-    socket.get('channel', function(err, oldChannel) {
-      if (oldChannel) {
-        socket.leave(oldChannel);
-      }
-      socket.set('channel', channel, function() {
-        socket.join(channel);
-        ack();
-      });
-    });
+  socket.on('join', function (channel, ack) {
+    socket.channel = channel;
+    if ("channel" in socket && socket.channel !== "") {
+      socket.leave(String(socket.channel));
+    }
+    socket.join(channel);
+    ack();
   });
-  
-  socket.on('message', function(msg, ack) {
-    socket.get('channel', function(err, channel) {
-      if (err) {
-        socket.emit('error', err);
-      } else if (channel) {
-        socket.broadcast.to(channel).emit('broadcast', msg);
-        ack();
-      } else {
-        socket.emit('error', 'no channel');
-      }
-    });
+
+  socket.on('message', function (msg, ack) {
+    // console.log(msg, ack);
+    if ("channel" in socket && socket.channel !== "") {
+      socket.broadcast.to(socket.channel).emit('broadcast', msg);
+      ack();
+    }
   });
 });
 
