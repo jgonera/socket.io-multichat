@@ -1,3 +1,5 @@
+**This example is _very_ old. It does not work with the latest versions of Socket.IO.**
+
 Socket.IO multiroom chat demo
 =============================
 
